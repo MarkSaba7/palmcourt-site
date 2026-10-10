@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy policy | Palm Court</title>
+<meta name="description" content="What Palm Court stores, what never leaves your device (camera frames), and how ads and cookies from Google work on this site.">
+<!-- Addresses use the placeholder palmcourt.example: tools/build-site.mjs swaps in SITE_URL from site/config.mjs. -->
+<link rel="canonical" href="https://palmcourt.me/privacy.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Palm Court">
+<meta property="og:title" content="Privacy policy | Palm Court">
+<meta property="og:description" content="What Palm Court stores, what never leaves your device (camera frames), and how ads and cookies from Google work on this site.">
+<meta property="og:url" content="https://palmcourt.me/privacy.html">
+<meta property="og:image" content="https://palmcourt.me/site/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A Palm Court match at golden hour on a blue hard court in a packed stadium">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#09131d">
+<link rel="icon" href="site/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="site/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="site/site.css">
+<script src="site/site.js" defer></script>
+<!-- AdSense tag: the deploy step writes it on the next line once site/config.mjs has a publisher id. -->
+<meta name="google-adsense-account" content="ca-pub-6534034175572614">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6534034175572614" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="site/icon.svg" alt="" width="30" height="30">Palm Court</a>
+    <nav class="nav" aria-label="Main"><a href="how-to-play.html">How to play</a><a href="faq.html">FAQ</a><a href="about.html">About</a></nav>
+    <a class="btn primary" href="play/">Play free</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy policy</h1>
+    <p class="lede">Palm Court needs no sign-up (an email is stored only if you choose to create an optional account), has no passwords and no analytics, and the camera picture never leaves your device. Your progress is backed up online under a random ID unless you turn that off, and the free web version shows ads from Google, which may collect data as described below.</p>
+    <p class="meta">Effective date: 3 October 2026</p>
+  </div>
+</section>
+<div class="wrap layout">
+  <article class="prose">
+    <h2 id="summary">In short</h2>
+    <div class="box"><ul>
+    <li>Camera frames are processed on your device and are never uploaded, recorded or stored.</li>
+    <li>Your settings and progress are saved in your own browser.</li>
+    <li>Your progress is backed up online under a random player ID (no name, email or camera data). If you pick a leaderboard name, that name and your best scores are public. You can turn the backup off in Settings.</li>
+    <li>An email address is stored only if you choose to create an account (optional). It is used only to send you sign-in codes, is kept by our database provider, Supabase, and you can delete it in the game (Settings, Profile, Account) or by asking us.</li>
+    <li>Online matches and the phone racket connect devices directly, so the other device can see your IP address.</li>
+    <li>Google and its partners use cookies to show and measure ads. In the EEA, the UK and Switzerland they ask for your consent first. We don’t sell your personal information for money.</li>
+    <li>To see or delete your data, email <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a>.</li>
+    </ul></div>
+    <h2 id="who">Who we are</h2>
+    <p>Palm Court is made and run by its independent developer (“we”, “us”), who is based in Quebec, Canada, and is the person responsible for the personal information described here that Palm Court itself handles (the online backup and leaderboards). Google and other ad partners are responsible for the data they collect through their ads. Contact: <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a>.</p>
+    <!-- OWNER: GDPR expects the controller's identity and contact details. Consider adding your legal name (or company) and a postal address here. If you have no establishment in the EU/UK but target players there, a lawyer can advise whether you need an EU/UK representative. -->
+    <h2 id="camera">Camera</h2>
+    <p>If you choose Body, Hand or Paddle controls, the game asks your browser for the camera. Each frame is analysed in the page, on your device (body and hand tracking use Google’s MediaPipe library running locally; paddle tracking is plain colour matching), and then thrown away. Frames are never sent over the network, recorded or saved, and no biometric or face data is created or kept. The only thing kept is the paddle colour you lock, as a colour value in your settings. You can revoke camera access at any time in your browser’s site settings. The phone racket page can also use the phone’s camera, if you allow it, only to read the pairing QR code; those frames are likewise processed on the phone and never sent or saved.</p>
+    <p><b>Body cam diagnostics (optional, off unless you switch it on).</b> To help tune the Body cam on your camera, Settings &gt; Controls has a switch that keeps a log of numbers only while you use Body cam: where the model placed your shoulders, elbows, wrists and hips in each frame (as coordinates), when the frames arrived and how long the model took, which swings the game counted and why, and which balls were coming. It never contains a picture, video or sound. It stays in the page’s memory on your device and is not saved or sent anywhere; the Export button saves it as a file and the Copy button puts it on your clipboard, and only you decide whether to share it. It is gone when you close the page or press Start again.</p>
+    <h2 id="device">Data saved on your device</h2>
+    <p>Palm Court saves your settings (display name, controls, graphics, sensitivity), your progress (level, XP, Fuzz, unlocks, match history and stats), your in-game ad choice, and, if online backup is on, the sign-in token for your anonymous backup, in your browser’s storage (IndexedDB and local storage). The phone racket page saves its own preferences and the last game it paired with on the phone. This stays in that browser on that device; clearing the site’s data deletes it. The <a href="cookies.html">cookie policy</a> lists each item.</p>
+    <h2 id="cloud">Online backup and leaderboards</h2>
+    <p>Palm Court backs up your progress online, so it can be recovered if the copy in your browser is lost or damaged, and it runs leaderboards. This is on by default. You can turn it off in Settings (Gameplay, “Online backup &amp; leaderboards”); it takes effect after you reload the page.</p>
+    <p>When it is on, your browser creates an anonymous account with our database provider, <a href="https://supabase.com/privacy">Supabase</a>. It has a random player ID: no email, password or camera data. We store under that ID:</p>
+    <ul>
+    <li>a copy of your progress (the same data as above), synchronised as you play;</li>
+    <li>your best scores (level, World Tour ranking points, longest win streak and fastest serve), all-time and per monthly season;</li>
+    <li>the leaderboard name you choose, if you choose one; and</li>
+    <li>technical data needed to run the service securely, such as sign-in timestamps, rate-limit counters and, in the provider’s logs, your IP address and browser details.</li>
+    </ul>
+    <p>If you choose a leaderboard name, that name and your scores are visible to every player, so please don’t use your real name or other personal details. Without an account the backup belongs to the browser it was made in; it can’t follow you to another device (a short transfer code can move it).</p>
+    <p><strong>Optional account.</strong> If you choose “Continue with email” in Settings (Profile, Account), you enter your email address and we send you a one-time code; there is no password. We store that email address with your anonymous player ID at Supabase, so the same progress, name and leaderboard entries follow you to any device you sign in on (for example the website and the Steam version). The email is used only to send you sign-in codes and is not used for marketing or shared with anyone else; the codes are sent through our email delivery provider, which handles your address only to deliver them. Signing out removes your progress from that device (it stays in your account). “Delete account” in the same place removes your email, your online save, your leaderboard entries and your online-play data from our database. You can also ask us to delete it by email.</p>
+    <h2 id="online">Online play and the phone racket</h2>
+    <p>To connect two browsers (a friend’s game, or your phone as a racket), the game uses the PeerJS public connection service, which sees both devices’ IP addresses to introduce them, and a STUN server run by Google that tells each device its public address. After that the devices talk directly (WebRTC). If a direct link isn’t possible, the encrypted connection may be relayed through a PeerJS relay (TURN) server. Only game data is sent: swings and phone motion readings, ball positions, scores, settings needed for the match and your display name. As with any direct connection, the other device can see your IP address, which can reveal your approximate location, so only play with people you trust.</p>
+    <p><strong>Quick match, ranked matches and parties.</strong> These use the same online service as the backup and leaderboards (Supabase) unless you switch it off in Settings. While you search or sit in a party it stores your anonymous account number, your display name, your rating and a time stamp; for a match it also stores the match result and, until the match ends, a room code. Ratings, results and early-leave counts are kept to run the ranked ladder and to limit abuse, and old match records are deleted after about two weeks. Opponents see your display name and rank, never your account number. Deleting your account (see Retention) deletes this data too.</p>
+    <h2 id="ads">Advertising and cookies</h2>
+    <p>The free web version shows ads: on the pages of this website (Google AdSense) and, in the game, between matches or when you choose to watch a rewarded ad (Google’s ads for games). Ads never appear during a point. If you play Palm Court on a game portal, that portal and its ad partners serve the ads under their own privacy policies. The Steam version has no ads.</p>
+    <ul>
+    <li>Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this website or other websites.</li>
+    <li>Google’s use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</li>
+    <li>You may opt out of personalised advertising by visiting <a href="https://adssettings.google.com/">Google Ads Settings</a>. You can also opt out of some third-party vendors’ use of cookies for personalised advertising at <a href="https://www.aboutads.info/choices/">aboutads.info</a> (or <a href="https://www.youronlinechoices.eu/">youronlinechoices.eu</a> in Europe).</li>
+    <li>Ad partners may collect your IP address, browser and device information, cookies or similar identifiers, and how you interact with ads, to serve, cap, measure and (with your consent where the law requires it) personalise ads, and to prevent fraud. Read <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites that use its services</a>.</li>
+    </ul>
+    <p>Palm Court is not directed at children, and its ads are not set up as child-directed. More detail on cookies and how to control them is in the <a href="cookies.html">cookie policy</a>.</p>
+    <p><strong>Your consent.</strong> Visitors in the European Economic Area, the United Kingdom and Switzerland are asked for consent by Google’s consent tool (or, in the game, by Palm Court’s own ad-choice prompt) before personalised ads or advertising cookies are used; if you decline, only limited or non-personalised ads are shown. You can change your mind at any time with the buttons below.</p>
+    <p><button type="button" class="btn" id="cmpRevoke" hidden>Change my cookie choices</button></p>
+    <p>In the game, where Palm Court asks for your ad choice itself, you can change your answer under <strong>Ad choices</strong> in the main menu, or here: <button type="button" class="btn" id="resetConsent">Reset my in-game ad choice</button> <span id="resetMsg" role="status"></span></p>
+    <h2 id="other">Other requests your browser makes</h2>
+    <p>Like any web page, Palm Court downloads its libraries and fonts from content networks (jsDelivr, Google Fonts, and Google’s storage for the hand-tracking model), and the website is delivered by its hosting provider (GitHub Pages or Cloudflare). Those services see your IP address and browser details when they deliver the files, and may keep them in server logs for security. Palm Court uses no analytics or tracking of its own.</p>
+    <h2 id="bases">Why we use data (legal bases)</h2>
+    <p>Where the EU or UK GDPR applies, we rely on:</p>
+    <ul>
+    <li><strong>performance of our agreement with you</strong> (the <a href="terms.html">terms of use</a>) to save and back up your progress, run leaderboards and connect online matches you start;</li>
+    <li><strong>our legitimate interests</strong> in keeping the service secure, preventing cheating and abuse, and showing non-personalised ads that keep the game free;</li>
+    <li><strong>your consent</strong> for personalised ads and advertising cookies, which you can withdraw at any time as described above.</li>
+    </ul>
+    <h2 id="sharing">Who receives data</h2>
+    <p>We don’t sell your personal information for money. Data is shared only with the service providers that run Palm Court on our behalf (Supabase for the backup and leaderboards; PeerJS and Google for connecting online matches; our hosting and content networks), with Google and its ad partners as described above, with the other player in an online match (your display name and IP address), with everyone (your leaderboard name and scores, if you set a name), and where the law requires it or to protect players, the service or our rights. These providers may process data in the United States and other countries; where the law requires, transfers rely on safeguards such as the European Commission’s standard contractual clauses or an adequacy decision.</p>
+    <h2 id="retention">How long we keep data</h2>
+    <ul>
+    <li>Data on your device stays until you clear the site’s data or reset it in the game.</li>
+    <li>Your online backup, scores and leaderboard name are kept while the online backup feature runs, unless you ask us to delete them sooner. An account’s email address is kept until you delete the account (Settings, Profile, Account) or ask us to. Monthly season scores are kept as season history. If we shut the online features down, we will delete this data.</li>
+    <li>Technical logs held by our providers are kept for the periods set by those providers, typically days to weeks.</li>
+    <li>Data held by ad partners is kept under their own policies.</li>
+    </ul>
+    <h2 id="children">Children</h2>
+    <p>Palm Court is not directed at children under 13, and we don’t knowingly collect personal information from children under 13 (or under the age of digital consent where they live). Children under 13 should not set a leaderboard name or play online. Ads on this site are served by Google under its policies and are not set up as child-directed. If you believe a child under 13 has given us personal information, for example in a leaderboard name, contact us and we will delete it.</p>
+    <h2 id="rights">Your choices and rights</h2>
+    <p>You can turn the online backup off in Settings, delete your account (if you made one) in Settings, Profile, Account, clear the site’s data to delete everything on your device, and change your ad choice at any time. To get a copy of, correct or delete the data we hold in the online backup, email <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a> with your leaderboard name (if you set one) and roughly when you last played; because the backup has no name or email, we may need these details to find it, and we may not be able to identify a backup that has no leaderboard name.</p>
+    <p><strong>EU, EEA, UK and Swiss residents</strong> have the right to access, correct, delete, restrict or move their personal data, to object to its use, and to withdraw consent at any time. You also have the right to complain to your data protection authority (in the UK, the Information Commissioner’s Office), though we’d appreciate the chance to help first.</p>
+    <p><strong>California and other US state residents</strong> have the right to know what personal information we collect, use and disclose, to access, correct and delete it, and to opt out of its “sale” or “sharing” for cross-context behavioural advertising. In the last 12 months, Palm Court has collected identifiers (random player ID, IP address, advertising identifiers via Google), internet activity (gameplay and ad interactions) and approximate location derived from IP address, from you and your device, for the purposes above. We don’t sell personal information for money, but advertising cookies placed by Google may count as “sharing” under California law. <strong>To opt out</strong>, decline personalised ads in the consent tool or the in-game Ad choices, use <a href="https://adssettings.google.com/">Google Ads Settings</a>, or email us. We don’t knowingly sell or share the personal information of anyone under 16, and we won’t treat you differently for using your rights. You may use an authorised agent; we may ask for reasonable details to verify a request.</p>
+    <p><strong>Canada and Quebec residents</strong> can ask to see, correct or delete the personal information we hold about them, to withdraw their consent, and to ask how it is used, under Canadian federal privacy law (PIPEDA) and, in Quebec, the Act respecting the protection of personal information in the private sector (as amended by Law 25). Email <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a> and the person responsible for privacy at Palm Court will answer. If you are not satisfied, you can complain to the Office of the Privacy Commissioner of Canada or, in Quebec, the Commission d’accès à l’information du Québec. Your personal information may be stored and processed outside Quebec and Canada (for example by our hosting and backup providers); see “Who receives data”.</p>
+    <p>We aim to respond to requests within one month (45 days for US state requests). For data held by an ad partner, use their privacy tools or contact them.</p>
+    <h2 id="security">Security</h2>
+    <p>Connections to our providers use encryption (HTTPS and encrypted WebRTC), the online backup is protected so that only your browser’s anonymous session can read or change your save, and we keep the data we collect to a minimum. No system is perfectly secure, so please don’t put personal details in your names.</p>
+    <h2 id="contact">Contact and changes</h2>
+    <p>Questions about this policy or your data: <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a>. If this policy changes, the new version is posted on this page with a new effective date; for significant changes we will try to give notice on the website or in the game.</p>
+  </article>
+  <nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#summary">In short</a></li><li><a href="#who">Who we are</a></li><li><a href="#camera">Camera</a></li><li><a href="#device">Data on your device</a></li><li><a href="#cloud">Online backup and leaderboards</a></li><li><a href="#online">Online play</a></li><li><a href="#ads">Ads and cookies</a></li><li><a href="#other">Other services</a></li><li><a href="#bases">Legal bases</a></li><li><a href="#sharing">Who receives data</a></li><li><a href="#retention">Retention</a></li><li><a href="#children">Children</a></li><li><a href="#rights">Your rights</a></li><li><a href="#security">Security</a></li><li><a href="#contact">Contact</a></li></ol></nav>
+</div>
+</main>
+<script>/*! Palm Court (c) 2026. All rights reserved. */
+(()=>{const t=document.getElementById("cmpRevoke");if(document.querySelector('script[src*="adsbygoogle.js"]')){const e=window.googlefc=window.googlefc||{};e.callbackQueue=e.callbackQueue||[],t.hidden=!1,t.onclick=()=>{const o=window.googlefc,c=()=>window.googlefc.showRevocationMessage();typeof o.showRevocationMessage=="function"?c():(o.callbackQueue=o.callbackQueue||[]).push(c)}}document.getElementById("resetConsent").onclick=()=>{let e="Done. The game will ask again next time.";try{localStorage.removeItem("palmcourt.consent")}catch{e="Your browser blocked site storage, so there is nothing saved to reset."}document.getElementById("resetMsg").textContent=e}})();
+</script>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="./"><img src="site/icon.svg" alt="" width="30" height="30" loading="lazy">Palm Court</a>
+      <p>Motion-controlled tennis in your browser. Swing your phone, your hand or a paddle, or pick up a controller, and the player on court does the running.</p>
+    </div>
+    <div>
+      <h2>Game</h2>
+      <ul><li><a href="play/">Play free</a></li><li><a href="how-to-play.html">How to play</a></li><li><a href="faq.html">FAQ</a></li><li><a data-steam href="https://store.steampowered.com/app/YOUR_APP_ID/Palm_Court/"><span>Wishlist on Steam</span></a></li><li><a class="social" href="https://www.instagram.com/palmcourt.game/" target="_blank" rel="noopener" aria-label="Instagram: @palmcourt.game (opens in a new tab)"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul>
+    </div>
+    <div>
+      <h2>Palm Court</h2>
+      <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a href="cookies.html">Cookie policy</a></li><li><a href="credits.html">Credits</a></li></ul>
+    </div>
+    <p class="fine">© <span data-year>2026</span> Palm Court. The players are fictional characters with playful parody names inspired by real-world tennis stars. Palm Court is not affiliated with, sponsored by or endorsed by any real player, tour, tournament or brand, and uses no real person’s name, image or likeness.</p>
+  </div>
+</footer>
+</body>
+</html>

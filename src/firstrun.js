@@ -1,0 +1,32 @@
+/*! Palm Court (c) 2026. All rights reserved. */
+import{Settings as o}from"./core.js";import{UI as l,$ as r}from"./ui.js";import{Training as f}from"./training.js";import{Profile as p}from"./profile.js";import{Progress as m}from"./progress.js";import{Pad as h}from"./pad.js";import*as c from"./firstrun-logic.js";const s=t=>String(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e]),u=()=>{try{return matchMedia("(pointer: coarse)").matches}catch{return!1}},b=`
+.fr-slab { width: min(720px, 100%); gap: 14px; }
+.fr-slab h2 { font-size: clamp(34px, 6vw, 48px); }
+.fr-rec { display: grid; gap: 5px; padding: 12px 14px 13px; border: 1px solid var(--edge); border-left: 4px solid var(--optic); background: rgba(242,245,238,.05); }
+.fr-rec p { margin: 0; }
+.fr-badge { font: 700 12px/1 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--optic); }
+.fr-rec h3 { margin: 0; font: 900 clamp(30px, 7vw, 38px)/.95 var(--display); text-transform: uppercase; }
+.fr-line { color: var(--chalk); font-size: 15px; }
+.fr-need { color: var(--mist); font-size: 13px; }
+.fr-hint { color: var(--optic); font-size: 15px; font-weight: 700; }
+.fr-play { width: 100%; min-height: 64px; text-align: center; font: 900 clamp(30px, 8vw, 38px)/1 var(--display); text-transform: uppercase; letter-spacing: .04em; }
+.fr-more { margin: 4px 0 0; font: 700 12px/1 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--mist); }
+.fr-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-top: 8px; }
+.fr-card { display: grid; gap: 4px; align-content: start; min-height: 92px; padding: 10px 12px 11px; }
+.fr-card b { font: 900 16px/1.05 var(--display); text-transform: uppercase; overflow-wrap: break-word; }   /* (16px: "CONTROLLER" must fit a 150 px card on one line) */
+.fr-card .l { display: block; font-size: 13px; font-weight: 500; }
+.fr-card .n { display: block; margin-top: 2px; font-size: 12px; font-weight: 500; color: var(--mist); }
+.fr-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; }
+.fr-foot .fine { flex: 1 1 220px; }
+@media (max-width: 560px) { .fr-slab { padding: 16px 14px 14px; gap: 10px; } .fr-slab h2 { font-size: 34px; } .fr-card { min-height: 0; } .fr-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fr-foot .btn { width: 100%; text-align: center; } }
+@media (max-height: 700px) and (min-width: 561px) { .fr-slab { padding-block: 18px 16px; gap: 10px; } }
+`,x=`
+<main id="firstrun" class="screen center" hidden aria-labelledby="frTitle">
+  <section class="slab fr-slab">
+    <header><p class="eyebrow">Welcome to Palm Court</p><h2 id="frTitle"></h2></header>
+    <div class="fr-rec" id="frRec" aria-live="polite" aria-atomic="true"></div>
+    <button type="button" class="btn primary fr-play" id="btnFrPlay" aria-describedby="frRec"></button>
+    <section aria-labelledby="frMore"><h3 class="fr-more" id="frMore">Other ways to play</h3><div class="fr-cards" id="frCards"></div></section>
+    <footer class="fr-foot"><p class="fine" id="frSettings"></p><button type="button" class="btn ghost small" id="btnFrSkip" data-back>Skip to the menu</button></footer>
+  </section>
+</main>`;export const FirstRun={shown:!1,dev:null,busy:!1,timer:0,padSeen:!1,who(){const t=p.data&&p.data.tutorial||{};let e=0;try{e=Object.keys(m.training().runs||{}).length}catch{}return{firstRunDone:!!o.firstRunDone,matches:p.stats&&p.stats.matches,history:p.history?p.history.length:0,trainingRuns:e,control:o.control,tutorialDone:!!t.done,tutorialSkipped:!!t.skipped,introStep:o.introStep|0}},async maybeOpen(){let t;try{t=new URLSearchParams(location.search)}catch{t=new URLSearchParams}return await p.ready,c.wantsStep(this.who(),t)?(this.build(),this.dev={coarse:u(),padFound:!!h.id,hasCamera:null,aLabel:this.aLabel(),pick:null},this.padSeen=this.dev.padFound,this.shown=!0,this.render(),l.go("firstrun"),r("btnFrPlay").focus({preventScroll:!0}),this.watch(),!0):!1},build(){if(r("firstrun"))return;const t=document.createElement("style");t.id="firstrunCss",t.textContent=b,document.head.append(t);const e=document.createElement("div");e.innerHTML=x;const a=r("hud"),i=e.firstElementChild;a?a.before(i):document.body.append(i),r("btnFrPlay").onclick=()=>this.choose(c.plan(this.dev).primary.id),r("btnFrSkip").onclick=()=>this.skip(),r("frCards").addEventListener("click",d=>{const n=d.target.closest("[data-id]");n&&this.choose(n.dataset.id,!0)})},aLabel(){try{return h.glyph("a")||"A"}catch{return"A"}},render(){const t=c.plan(this.dev),e=document.activeElement,a=e&&e.dataset&&e.dataset.id,i=t.primary;r("frTitle").textContent=t.heading,r("frRec").innerHTML=`<p class="fr-badge">${s(t.badge)}</p><h3>${s(i.title)}</h3><p class="fr-line">${s(i.line)}</p><p class="fr-need">${s(i.need)}</p>${t.hint?`<p class="fr-hint">${s(t.hint)}</p>`:""}`;const d=r("btnFrPlay");if(d.textContent=t.playLabel,d.setAttribute("aria-label",`${t.playLabel}: ${i.title}`),r("frCards").innerHTML=t.cards.map(n=>`<button type="button" class="btn fr-card" data-id="${n.id}" aria-describedby="frd-${n.id}"><b>${s(n.title)}</b><span id="frd-${n.id}"><span class="l">${s(n.line)}</span><span class="n">${s(n.need)}</span></span></button>`).join(""),r("frSettings").textContent=t.settings,a){const n=r("frCards").querySelector(`[data-id="${a}"]`);n&&n.focus({preventScroll:!0})}},watch(){const t=()=>{const e=!!h.id;e!==this.padSeen&&(this.padSeen=e,this.dev.padFound=e,this.dev.aLabel=this.aLabel(),this.render())};this.onPad=t,addEventListener("gamepadconnected",t),this.timer=setInterval(t,300);try{navigator.mediaDevices.enumerateDevices().then(e=>{!this.shown||!e.length||(this.dev.hasCamera=e.some(a=>a.kind==="videoinput"),this.dev.hasCamera||this.render())}).catch(()=>{})}catch{}},unwatch(){clearInterval(this.timer),this.timer=0,this.onPad&&removeEventListener("gamepadconnected",this.onPad),this.onPad=null,this.shown=!1},async choose(t,e=!1){const a=c.describe(t,this.dev),i=c.settingsFor(t);if(!(!a||!i||this.busy)){if(e&&a.kind==="direct"){this.dev.pick=t,this.render(),r("btnFrPlay").focus({preventScroll:!0});return}this.busy=!0;try{o.firstRunDone=!0,i.mouseMode&&(o.mouseMode=i.mouseMode),l.setControl(i.control),this.unwatch(),f.hideCard(),a.kind==="direct"?await f.start("tutorial"):(f.returnTo="tutorial",l.openControls("menu"))}catch(d){console.error("[firstrun]",d),l.go("menu")}finally{this.busy=!1}}},skip(){o.firstRunDone=!0,o.save(),this.unwatch(),l.go("menu")}};

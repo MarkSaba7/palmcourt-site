@@ -1,0 +1,30 @@
+/*! Palm Court (c) 2026. All rights reserved. */
+import{UI as n,$ as o}from"./ui.js";import{Bus as u}from"./events.js";import{Profile as b}from"./profile.js";import{Platform as g}from"./platform.js";import{ProgressUI as c}from"./progress-ui.js";import{isSteam as l,upsellVisible as m}from"./editions.js";import{steamAdds as x,staysFree as f,collection as v,PROMISES as y,MOVE_STEPS as w,steamStatus as S}from"./edition-info.js";import{CHAPTERS as $}from"./career.js";import{achievementsHere as C}from"./economy.js";const r=e=>String(e??"").replace(/[&<>"']/g,t=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[t]),k=`
+.ed-slab { width: min(940px, 100%); gap: 16px; }
+.ed-lead { margin: 6px 0 0; max-width: 62ch; color: var(--mist); }
+.ed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+.ed-card { border: 1px solid var(--edge); background: rgba(242,245,238,.04); padding: 12px 14px 14px; display: grid; gap: 6px; align-content: start; }
+.ed-card h3 { margin: 0; font: 900 24px/.98 var(--display); text-transform: uppercase; }
+.ed-card p { margin: 0; font-size: 13px; color: var(--mist); }
+.ed-card.inc h3::before { content: "✓ "; color: var(--optic); }
+.ed-sw { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2px; }
+.ed-sw i { width: 14px; height: 14px; border-radius: 3px; border: 1px solid rgba(242,245,238,.35); }
+.ed-h { margin: 4px 0 0; font: 700 12px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+.ed-list { margin: 0; padding: 0 0 0 18px; display: grid; gap: 4px; font-size: 14px; }
+.ed-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.ed-stat { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0 0 6px; padding: 0; list-style: none; }
+.ed-stat li { display: grid; gap: 2px; font-size: 13px; color: var(--mist); }
+.ed-stat b { font: 900 24px/1 var(--display); color: var(--optic); text-transform: none; }
+.ed-store { border: 1px solid var(--edge); background: rgba(242,245,238,.04); padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; margin-top: 18px; }
+.ed-store p { margin: 0; font-size: 13px; color: var(--mist); max-width: 60ch; }
+.ed-store b { color: var(--chalk); }
+.ed-link { background: none; border: 0; padding: 0; font: inherit; color: var(--optic); text-decoration: underline; cursor: pointer; }
+@media (max-width: 720px) { .ed-cols { grid-template-columns: 1fr; } }`,T=`<main id="editions" class="screen center" hidden aria-labelledby="edTitle">
+  <section class="slab ed-slab">
+    <header><p class="eyebrow" id="edEyebrow"></p><h2 id="edTitle"></h2><p class="ed-lead" id="edLead"></p></header>
+    <div id="edBody"></div>
+    <div class="actions row"><button type="button" class="btn" id="edBack" data-back>Back</button><button type="button" class="btn primary" id="edWish" hidden>Wishlist on Steam</button></div>
+  </section>
+</main>`;export const EditionUI={built:!1,from:"menu",init(){if(this.built||!l()&&!m())return;this.built=!0;const e=document.createElement("style");e.id="edCss",e.textContent=k,document.head.append(e);const t=document.createElement("div");t.innerHTML=T;const s=o("over")||o("hud");if(s?s.before(t.firstElementChild):document.body.append(t.firstElementChild),o("edBack").onclick=()=>n.go(this.from==="editions"?"menu":this.from),o("edWish").onclick=()=>g.openWishlist(),document.addEventListener("click",i=>{i.target.closest&&i.target.closest("[data-open-editions]")&&(i.preventDefault(),this.open())}),u.on("screen",({screen:i})=>{i==="options"&&setTimeout(()=>this.aboutLink(),0)}),!l()){const i=c.extras||{};c.extras={...i,shop:()=>`${i.shop?i.shop():""}${this.storeCard()}`}}},open(){if(!this.built)return;n.screen!=="editions"&&(this.from=n.screen||"menu"),this.render(),n.go("editions");const e=o("edBack");e&&e.focus({preventScroll:!0})},aboutLink(){const e=document.querySelector("#pane-about .about-links");if(!e||o("edAbout"))return;const t=document.createElement("button");t.type="button",t.id="edAbout",t.className="btn small ghost",t.setAttribute("data-open-editions",""),t.textContent=l()?"Your edition":"What Steam adds",e.prepend(t)},storeCard(){return'<section class="ed-store" aria-label="Palm Court on Steam"><p><b>Palm Court on Steam.</b> The whole game here stays free. The Steam edition adds the full World Tour, a Career story and the Centre Court collection, with no ads.</p><button type="button" class="btn small ghost" data-open-editions>See what Steam adds</button></section>'},card(e,t){const s=e.swatches?`<div class="ed-sw" aria-hidden="true">${e.swatches.map(i=>`<i style="background:${r(i.color)}" title="${r(i.name)}"></i>`).join("")}</div>`:"";return`<article class="ed-card${t?" inc":""}"><h3>${r(e.title)}</h3><p>${r(e.text)}</p>${s}</article>`},render(){const e=l(),t=x(e),s=b;o("edEyebrow").textContent=e?"Steam edition":"Palm Court on Steam",o("edTitle").textContent=e?"Your edition":"What the Steam edition adds",o("edLead").textContent=e?"Everything in the Steam edition is open to you, and the game never shows an ad.":"This web edition is the whole game and stays free. The Steam edition is the same game with more of it.";let i={};if(e&&s.loaded){const a=v().items;i={chapters:$.filter(d=>s.data.achievements[d.ach]).length,achievements:C().filter(d=>s.data.achievements[d.id]).length,owned:a.filter(d=>d.how==="free"||s.owns(d.id)).length}}const p=e?`<ul class="ed-stat">${S(i).map(a=>`<li>${r(a.label)}<b>${r(a.value)}</b></li>`).join("")}</ul>`:"",h=e?"":`<div><h3 class="ed-h">Free on the web, always</h3><ul class="ed-list">${f().map(a=>`<li>${r(a)}</li>`).join("")}</ul></div>`;o("edBody").innerHTML=`${p}<div class="ed-grid">${t.map(a=>this.card(a,e)).join("")}</div>
+      <div class="ed-cols">${h}<div><h3 class="ed-h">The promises</h3><ul class="ed-list">${y.map(a=>`<li>${r(a)}</li>`).join("")}</ul></div>
+      <div><h3 class="ed-h">${e?"Bring a web save":"Bring your progress"}</h3><ol class="ed-list">${w.map(a=>`<li>${r(a)}</li>`).join("")}</ol></div></div>`,o("edWish").hidden=e||!m()}};
