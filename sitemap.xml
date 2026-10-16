@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The deploy step (tools/build-site.mjs) swaps palmcourt.example for the site address. Add new pages here. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://palmcourt.me/</loc><priority>1.0</priority></url>
+  <url><loc>https://palmcourt.me/play/</loc><priority>0.9</priority></url>
+  <url><loc>https://palmcourt.me/how-to-play.html</loc><priority>0.8</priority></url>
+  <url><loc>https://palmcourt.me/faq.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://palmcourt.me/contact.html</loc><priority>0.4</priority></url>
+  <url><loc>https://palmcourt.me/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://palmcourt.me/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://palmcourt.me/cookies.html</loc><priority>0.3</priority></url>
+  <url><loc>https://palmcourt.me/guides/</loc><priority>0.8</priority></url>
+  <url><loc>https://palmcourt.me/news.html</loc><priority>0.6</priority></url>
+  <url><loc>https://palmcourt.me/pros.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/two-minute-start.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/tennis-scoring-explained.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/mouse-swipe-controls.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/phone-racket-setup.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/camera-controls-setup.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/controller-guide.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/couch-play-and-doubles.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/serve-and-return.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/groundstroke-tactics.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/net-play.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/beat-the-five-pros.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/courts-and-modes.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/levels-fuzz-store-locker.html</loc><priority>0.7</priority></url>
+  <url><loc>https://palmcourt.me/guides/how-palm-court-is-built.html</loc><priority>0.7</priority></url>
+</urlset>
