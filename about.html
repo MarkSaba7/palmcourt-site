@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Palm Court</title>
+<meta name="description" content="Who makes Palm Court and why, how the game is built, how the guides are kept accurate, what happens to your data and how to contact the developer.">
+<!-- Addresses use the placeholder palmcourt.example: tools/build-site.mjs swaps in SITE_URL from site/config.mjs. -->
+<link rel="canonical" href="https://palmcourt.me/about.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Palm Court">
+<meta property="og:title" content="About Palm Court">
+<meta property="og:description" content="Who makes Palm Court and why, how the game is built, how the guides are kept accurate, what happens to your data and how to contact the developer.">
+<meta property="og:url" content="https://palmcourt.me/about.html">
+<meta property="og:image" content="https://palmcourt.me/site/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A Palm Court match at golden hour on a blue hard court in a packed stadium">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#09131d">
+<link rel="icon" href="site/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="site/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="site/site.css">
+<script src="site/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://palmcourt.me/"},{"@type":"ListItem","position":2,"name":"About","item":"https://palmcourt.me/about.html"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6534034175572614" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="site/icon.svg" alt="" width="30" height="30">Palm Court</a>
+    <nav class="nav" aria-label="Main"><a href="how-to-play.html">How to play</a><a href="guides/">Guides</a><a href="news.html">News</a><a href="faq.html">FAQ</a><a href="about.html" aria-current="page">About</a></nav>
+    <a class="btn primary" href="play/">Play free</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h1>About Palm Court</h1>
+    <p class="lede">An independent tennis game you play with real swings, right in your browser: who makes it, why, and how.</p>
+  </div>
+</section>
+<div class="wrap layout">
+  <article class="prose">
+    <h2 id="idea">The idea</h2>
+    <p>Tennis games usually turn a racket swing into a button press. Palm Court goes the other way: you swing, and the game reads the swing. Your phone becomes the racket handle, or the webcam follows your hand or your racket arm. Prefer buttons? Pick up a PlayStation, Xbox or Switch controller and let go of a shot button as the ball arrives. The player on court does the running, so all that’s left for you is the part that feels like tennis: the timing, the shape and the speed of your stroke.</p>
+    <p>It runs in a web browser with nothing to install, so a match is one link away, whether you want a quick tiebreak against the CPU or a set against a friend in another city.</p>
+    <h2 id="who">Who makes Palm Court</h2>
+    <p>Palm Court is an independent project, made and run by its developer, who is based in Quebec, Canada. It is not a studio product. The same person is identified as responsible for the game’s data in the <a href="privacy.html">privacy policy</a>, and answers the messages that come in through the <a href="contact.html">contact page</a>.</p>
+    <p>Pages here are signed “the Palm Court team” because that is the name of the project, not because a large staff stands behind it.</p>
+    <h2 id="why">Why it exists</h2>
+    <p>The aim was to find out what tennis feels like when the controller is your own swing, and to make that something anyone can try in thirty seconds. A browser game can be shared with a link. It runs on a laptop, a school computer, a Chromebook or a handheld, and it needs no install and no account. The cost of that choice is that everything is written from scratch and the size of every feature is watched, which suits a small project that wants to stay quick to open.</p>
+    <p>The players are fictional characters with parody names, so the game can have a tour, rivals and personalities without borrowing anyone’s identity.</p>
+    <h2 id="how">How it works</h2>
+    <ul>
+    <li><strong>Phone racket:</strong> the racket page on your phone reads its motion sensors, spots each swing and sends it to the game in a few milliseconds.</li>
+    <li><strong>Webcam:</strong> an on-device hand or body tracker follows your racket hand or arm through the camera. Frames are analysed in the page and never leave your computer.</li>
+    <li><strong>Game controller:</strong> the browser reports a PlayStation, Xbox or Switch pad to the page. You hold a shot button to charge it and let go as the ball arrives; the release is the swing, and the left stick aims.</li>
+    <li><strong>The court:</strong> a 57.7 gram ball is simulated 240 times a second with gravity, air drag and the lift that spin creates, on a court with the official dimensions. Three surfaces change the bounce, and a line review draws the ball’s mark against the line, using the rule that a ball is in if any part of its mark touches it.</li>
+    <li><strong>The opponents:</strong> each computer player is nine style numbers (aggression, topspin, slice, drop shots, net play, serve, consistency, defence and speed) plus a few habits, at one of three skill levels. It is tested by playing many simulated matches in a script and checking that each pro wins and loses in the ways their style suggests.</li>
+    <li><strong>Online matches</strong> connect the two browsers directly, peer to peer.</li>
+    </ul>
+    <p>For the longer version, with the reasoning behind each choice, read <a href="guides/how-palm-court-is-built.html">how Palm Court is built</a>, and for what the numbers mean in play, the <a href="guides/">guides</a>.</p>
+    <h2 id="built-with">Built with</h2>
+    <p>Palm Court stands on excellent open-source work: <a href="https://threejs.org/">three.js</a> for 3D graphics (MIT licence), Google’s <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker">MediaPipe</a> hand tracker (Apache 2.0), <a href="https://peerjs.com/">PeerJS</a> for peer-to-peer connections (MIT) and the <a href="https://fonts.google.com/specimen/Big+Shoulders+Display">Big Shoulders Display</a> and <a href="https://fonts.google.com/specimen/Barlow">Barlow</a> typefaces (SIL Open Font License). Every model, texture and sound in the game is generated by its own code, and the umpire’s and commentator’s voices are your own device’s speech voices. The <a href="credits.html">credits page</a> lists every licence.</p>
+    <h2 id="accuracy">How the guides are kept accurate</h2>
+    <p>The <a href="guides/">guides</a>, the <a href="pros.html">pros page</a> and the <a href="news.html">news page</a> are written for people who play the game or are curious about it. The numbers in them (court sizes, rewards, unlock levels, prices, how a swing becomes a shot, what each setting does) are read from the game’s own code and data when a page is written, and each page shows the date it was last updated. When the game changes, the pages are updated. The guides on tennis technique explain the sport in general terms for players of the game; they are not a replacement for a coach.</p>
+    <p>If something is wrong, out of date, or unclear, please say so on the <a href="contact.html">contact page</a>: a correction is the most useful message we can get. The <a href="glossary.html">glossary</a> and the <a href="faq.html">FAQ</a> are kept to the same standard.</p>
+    <h2 id="data">What happens to your data</h2>
+    <p>In short: camera frames are analysed on your device and never uploaded, recorded or stored. Your settings and progress are saved in your own browser, with an optional anonymous online backup that you can switch off in Settings. An email address is stored only if you choose to make an account. The ads on this website, and in the web game if it shows them, come from Google, which uses cookies and asks for your consent first where the law requires it; your game progress and camera picture are never sent to advertisers. The <a href="privacy.html">privacy policy</a> has the full list, the <a href="cookies.html">cookie policy</a> lists what the game keeps in your browser, and the <a href="terms.html">terms of use</a> cover the rest.</p>
+    <h2 id="contact">How to contact us</h2>
+    <p>Questions, bug reports, corrections and ideas are welcome on the <a href="contact.html">contact page</a>, or by email at <a href="mailto:palmcourt.game@gmail.com">palmcourt.game@gmail.com</a>. The developer reads every message, and a reply can take a few days. A good bug report names your browser and device, the controls you use, what you did and what happened. Requests about personal data, and press or business questions, go to the same address. News and clips are also posted on Instagram as <a href="https://www.instagram.com/palmcourt.game/" target="_blank" rel="noopener">@palmcourt.game</a>.</p>
+    <h2 id="next">What’s next</h2>
+    <p>The browser version is free to play and stays free; advertising from Google helps pay for it. A full release for Windows is planned on Steam, without ads, with more tour events and cosmetics on top of the same game; the browser game is a complete game on its own.</p>
+    <p>The players in Palm Court are fictional characters. Their names are playful parodies inspired by real-world tennis stars, and the tournaments and sponsors are fictional too. Palm Court is not affiliated with, sponsored by or endorsed by any real player, tour, tournament or brand, and uses no real person’s name, image or likeness.</p>
+  </article>
+  <nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#idea">The idea</a></li><li><a href="#who">Who makes Palm Court</a></li><li><a href="#why">Why it exists</a></li><li><a href="#how">How it works</a></li><li><a href="#built-with">Built with</a></li><li><a href="#accuracy">How the guides are kept accurate</a></li><li><a href="#data">What happens to your data</a></li><li><a href="#contact">How to contact us</a></li><li><a href="#next">What’s next</a></li></ol></nav>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="./"><img src="site/icon.svg" alt="" width="30" height="30" loading="lazy">Palm Court</a>
+      <p>Motion-controlled tennis in your browser. Swing your phone or your hand, or pick up a controller, and the player on court does the running.</p>
+    </div>
+    <div>
+      <h2>Game</h2>
+      <ul><li><a href="play/">Play free</a></li><li><a href="how-to-play.html">How to play</a></li><li><a href="guides/">Guides</a></li><li><a href="pros.html">The pros</a></li><li><a href="news.html">News</a></li><li><a href="faq.html">FAQ</a></li><li><a data-steam href="https://store.steampowered.com/app/YOUR_APP_ID/Palm_Court/"><span>Wishlist on Steam</span></a></li><li><a class="social" href="https://www.instagram.com/palmcourt.game/" target="_blank" rel="noopener" aria-label="Instagram: @palmcourt.game (opens in a new tab)"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul>
+    </div>
+    <div>
+      <h2>Palm Court</h2>
+      <ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a href="cookies.html">Cookie policy</a></li><li><a href="credits.html">Credits</a></li></ul>
+    </div>
+    <p class="fine">© <span data-year>2026</span> Palm Court. The players are fictional characters with playful parody names inspired by real-world tennis stars. Palm Court is not affiliated with, sponsored by or endorsed by any real player, tour, tournament or brand, and uses no real person’s name, image or likeness.</p>
+  </div>
+</footer>
+</body>
+</html>

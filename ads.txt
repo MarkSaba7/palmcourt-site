@@ -1,0 +1,3 @@
+# ads.txt for palmcourt.me (Google AdSense). It must be served at https://palmcourt.me/ads.txt, the root of the domain.
+# The publisher id is the same as adsense.client in site/config.mjs and ads.client in src/config.js, without the leading "ca-".
+google.com, pub-6534034175572614, DIRECT, f08c47fec0942fa0
