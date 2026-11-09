@@ -1,0 +1,15 @@
+# Palm Court: everything is public. Crawlers may read every page and the scripts and styles the pages need to render.
+# Google's AdSense crawler (Mediapartners-Google) ignores the "*" group, so it is named: it must be able to read every page that carries ads.
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://palmcourt.me/sitemap.xml

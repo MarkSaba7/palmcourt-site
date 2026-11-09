@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fix lag, low frame rate and sound problems in Palm Court | Palm Court</title>
+<meta name="description" content="Fix Palm Court stutter, input lag and sound problems: what the graphics presets do, how Auto quality works, the frame rate readout and every audio setting explained.">
+<!-- Addresses use the placeholder palmcourt.example: tools/build-site.mjs swaps in SITE_URL from site/config.mjs. -->
+<link rel="canonical" href="https://palmcourt.me/guides/performance-audio-troubleshooting.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Palm Court">
+<meta property="og:title" content="Fix lag, low frame rate and sound problems in Palm Court | Palm Court">
+<meta property="og:description" content="Fix Palm Court stutter, input lag and sound problems: what the graphics presets do, how Auto quality works, the frame rate readout and every audio setting explained.">
+<meta property="og:url" content="https://palmcourt.me/guides/performance-audio-troubleshooting.html">
+<meta property="og:image" content="https://palmcourt.me/site/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A Palm Court match at golden hour on a blue hard court in a packed stadium">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#09131d">
+<link rel="icon" href="../site/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../site/apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Barlow:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="../site/site.css">
+<script src="../site/site.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fix lag, low frame rate and missing sound","description":"Fix Palm Court stutter, input lag and sound problems: what the graphics presets do, how Auto quality works, the frame rate readout and every audio setting explained.","image":"https://palmcourt.me/site/og.jpg","datePublished":"2026-10-26","dateModified":"2026-10-26","author":{"@type":"Organization","name":"The Palm Court team","url":"https://palmcourt.me/"},"publisher":{"@type":"Organization","name":"Palm Court","url":"https://palmcourt.me/","logo":{"@type":"ImageObject","url":"https://palmcourt.me/site/icon-512.png"}},"mainEntityOfPage":"https://palmcourt.me/guides/performance-audio-troubleshooting.html","inLanguage":"en","articleSection":"Fixes and answers","wordCount":1323}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://palmcourt.me/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://palmcourt.me/guides/"},{"@type":"ListItem","position":3,"name":"Fix lag, low frame rate and missing sound","item":"https://palmcourt.me/guides/performance-audio-troubleshooting.html"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6534034175572614" crossorigin="anonymous"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="../"><img src="../site/icon.svg" alt="" width="30" height="30">Palm Court</a>
+    <nav class="nav" aria-label="Main"><a href="../how-to-play.html">How to play</a><a href="../guides/" aria-current="page">Guides</a><a href="../news.html">News</a><a href="../faq.html">FAQ</a><a href="../about.html">About</a></nav>
+    <a class="btn primary" href="../play/">Play free</a>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="../guides/">Guides</a></li><li><span aria-current="page">Fix lag, low frame rate and missing sound</span></li></ol></nav>
+    <p class="eyebrow">Fixes and answers</p>
+    <h1>Fix lag, low frame rate and missing sound</h1>
+    <p class="lede">Three different things get called lag: a game that draws too slowly, a swing that arrives late, and a connection that wobbles online. They have different fixes. This page separates them, then covers the sound.</p>
+    <p class="byline">Written by the Palm Court team · Updated 26 October 2026 · 7 min read</p>
+  </div>
+</section>
+<div class="wrap layout">
+  <article class="prose">
+
+<h2 id="first-which-kind-of-lag-is-it">First, which kind of lag is it?</h2>
+<p>Press <kbd>F</kbd> during a match to show the <a href="../glossary.html#fps">frame rate</a> and the resolution the game is drawing at (for example “60 fps · 100%”). The pause menu goes further and adds your graphics chip’s name: “Running at 60 fps · 100% resolution · …”. That one line sorts most problems.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>What you notice</th><th>Most likely cause</th><th>Where to look</th></tr></thead>
+<tbody>
+<tr><td>The picture judders; the frame rate shown is under about 40</td><td>The computer cannot draw the scene fast enough</td><td>Graphics quality, browser acceleration, other tabs</td></tr>
+<tr><td>The picture is smooth but your swing lands late</td><td>The control’s own delay: a webcam, a phone link or a wireless controller</td><td>The <a href="camera-troubleshooting.html">camera guide</a>, the timing offset, the phone’s connection</td></tr>
+<tr><td>Online only: the opponent jerks or the ball seems to jump</td><td>The network between you</td><td>The ping badge, a nearer or wired connection</td></tr>
+</tbody></table></div>
+<p>Online, your own swings are always judged on your own machine, so your timing never waits on the network. A slow connection makes the other player look rough; it does not make your swings late.</p>
+
+<h2 id="if-the-picture-is-too-slow">If the picture is too slow</h2>
+<p>Work through these in order. They go from free and quick to a bigger change.</p>
+<ol>
+<li><strong>Check the browser is using your graphics card.</strong> If the menu shows <strong>“No graphics card in use: the 3D court will be slow”</strong>, your browser is drawing in software. In Chrome or Edge open Settings, System, turn on “Use graphics acceleration when available”, and relaunch. This one setting is worth more than every other tip combined.</li>
+<li><strong>Close other tabs and programs</strong>, especially video calls and anything else using the camera or the graphics card, and plug a laptop into its charger.</li>
+<li><strong>Pick a lower Graphics quality</strong> in Settings, Graphics. The next section says what each choice costs.</li>
+<li><strong>Turn off Instant replays</strong> in Settings, Gameplay if the hitch comes after big points. A replay is a short film from several angles with extra drawing effects; they back off by themselves when frames run late, but a weak machine can still stumble.</li>
+<li><strong>Try Day if Night stutters.</strong> From Medium upwards, night matches add floodlight shadows, which cost a little more. If a night match stutters and a day match does not, drop one preset.</li>
+</ol>
+
+<h2 id="what-each-graphics-preset-changes">What each graphics preset changes</h2>
+<p>Settings, Graphics, <strong>Quality</strong> offers Auto, Low, Medium, High and Ultra. Underneath, a preset is a bundle of five or six choices:</p>
+<div class="table-scroll"><table>
+<thead><tr><th>Preset</th><th>Pixel density (at most)</th><th>Soft lighting and glow</th><th>Edge smoothing</th><th>Crowd</th></tr></thead>
+<tbody>
+<tr><td>Low</td><td>1.0 times your screen, drawn at 80 percent</td><td>Off</td><td>Basic (FXAA), no extra sampling</td><td>Fewer, coarser spectators</td></tr>
+<tr><td>Medium</td><td>1.25 times</td><td>Glow on</td><td>Cleaner (SMAA) with 2 samples</td><td>Full crowd</td></tr>
+<tr><td>High</td><td>1.5 times</td><td>Soft contact shadows and glow</td><td>SMAA with 4 samples</td><td>Full crowd, more detail</td></tr>
+<tr><td>Ultra</td><td>2.0 times</td><td>As High, with the sharpest shadows</td><td>SMAA with 4 samples</td><td>The most detail</td></tr>
+</tbody></table></div>
+<p>The shadow maps grow with the preset too (1,024, 2,048, 2,048 and 4,096 pixels), and the better presets add a softer, stadium-wide sun shadow. The big cost is pixel density: a 4K or high-density laptop screen can ask the graphics chip to draw several times more pixels than a plain 1080p one. If you are unsure, Medium on an integrated chip and High on a graphics card are sensible. Ultra is for a strong card and a high-density screen.</p>
+
+<h2 id="what-auto-does-and-when-it-changes-its-mind">What Auto does, and when it changes its mind</h2>
+<p><a href="../glossary.html#auto-quality">Auto</a> is the default and it makes three decisions.</p>
+<ul>
+<li><strong>Where to start.</strong> It looks at the graphics chip’s name: a software renderer starts on Low, an integrated chip on Medium, anything else on High.</li>
+<li><strong>A quick check on the first visit.</strong> It watches the first few calm seconds (the menu, the demo match, the gaps between points), ignores the warm-up and single hitches, and then decides once. If the typical frame takes over 26 ms (under about 38 frames a second), or it had to cut the resolution below 80 percent, it goes one preset down; over 36 ms (under about 28 a second), or below 60 percent resolution, it goes straight to Low. It never goes back up in that check, it remembers the answer for two weeks, and it tells you: “Using lighter graphics for smoother play. Change it in Settings.” Picking a quality yourself clears that memory.</li>
+<li><strong>Adjusting as you play.</strong> If frames run slow it lowers the resolution a step at a time. If even the lowest resolution is too slow for about four seconds in a calm moment, it drops a preset for the rest of the visit. When things run fast again it raises the resolution in careful steps, but not back to a level that was too slow a moment ago, so it settles instead of flickering.</li>
+</ul>
+<p>Choose a fixed preset when you want the picture to stay exactly as it is, and Auto when you would rather not think about it.</p>
+
+<h2 id="when-the-swing-lands-late-not-the-picture">When the swing lands late, not the picture</h2>
+<p>If the frame rate is fine and swings still feel behind your hand, the delay is in the control. A webcam adds 30 to 120 ms of its own that no web page can see; the game compensates with the <strong>Timing offset</strong> and learns it as you play. A phone racket is fastest when both devices share one Wi-Fi network, and slower when the link has to go through a relay. A controller’s own release delay is learned automatically from your hits. The mouse has almost none. Each control’s guide has its own checklist, and the <a href="controls-reference-and-remapping.html">controls reference</a> lists the settings in one place.</p>
+
+<h2 id="sound-problems">Sound problems</h2>
+<p>Every sound in Palm Court is made by code in your browser as you play: rackets, bounces, footsteps, crowd, birds and crickets, the menu music. There are no audio files to download or to go missing, but it does mean the browser’s own rules apply.</p>
+<ul>
+<li><strong>Silence at the very start.</strong> Browsers only allow sound after you have clicked, tapped or pressed a key on the page. Your first click wakes it. If sound stops after you switch tabs, the browser has suspended it; click once in the game to wake it again.</li>
+<li><strong>Still silent.</strong> Check the tab has not been muted (the speaker icon on the tab), the system volume and the output device, then the sliders in <strong>Settings, Audio</strong>: Master, Effects, Crowd, Music and Umpire voice each have their own level.</li>
+<li><strong>No music in the match.</strong> By design. Music plays on the menus and fades out as a match starts; a short jingle marks a win, a defeat or a level-up. <strong>Music on</strong> turns the menu music and the jingles off together, while match sounds stay.</li>
+<li><strong>No spoken score.</strong> The umpire and the commentator use your system’s own speech voices, not recordings. If your device has none installed, nothing is said, but the score is always on screen as well. <strong>Umpire calls</strong> switches the voice off; <strong>Commentary</strong> offers Off, Captions, or Captions plus voice (a second voice).</li>
+<li><strong>Sound arrives late.</strong> Bluetooth headphones add their own delay, and the browser cannot see or remove it. Wired headphones or the speakers are better for timing a swing by ear.</li>
+<li><strong>Crackle or stutter.</strong> Audio shares the processor with everything else. Lower the graphics quality and close other tabs.</li>
+</ul>
+
+<h2 id="small-things-that-look-like-faults">Small things that look like faults</h2>
+<ul>
+<li><strong>The match paused when I clicked elsewhere.</strong> A match stops on its own when the game window loses focus (alt-tab, another program). Click back into it and resume.</li>
+<li><strong>A line call delayed the point.</strong> Close calls get a line review, and a swing or <kbd>Space</kbd> skips it.</li>
+<li><strong>The camera view changed.</strong> <kbd>C</kbd> switches between the player camera and the TV view, which is also a choice in Settings, Graphics.</li>
+</ul>
+<p>If a setting seems to have gone wrong, <strong>Reset to defaults</strong> sits at the bottom of every Settings tab, and <strong>Reset all settings</strong> is under About. Neither touches your progress. Reduce motion and the other comfort options are covered in the <a href="accessibility-and-comfort.html">accessibility guide</a>.</p>
+    <section class="related" aria-labelledby="related-h">
+      <h2 id="related-h">Keep reading</h2>
+      <ul><li><a href="camera-troubleshooting.html">Fix camera problems: missed, late and wrong swings</a>: A step-by-step fix list for the webcam controls: a blocked camera, bad light, wrong distance, a slow computer, late swings and swings that never register.</li><li><a href="accessibility-and-comfort.html">Accessibility and comfort: text size, contrast, motion, captions and more</a>: Every setting that makes the game easier to see, hear and play, what each one does, and combinations that work for different needs.</li><li><a href="online-play-and-friend-matches.html">Online play: friend links, Quick Play and parties</a>: How to start a match with a friend or a stranger, what the game shares, what the ping badge means, and fixes for connections that will not link.</li><li><a href="how-palm-court-is-built.html">How Palm Court is built</a>: The browser, three.js, characters made from numbers, real ball physics, the phone link in plain words, and what stays on your device.</li><li><a href="./">All guides</a></li></ul>
+      <p><a class="btn primary" href="../play/">Play Palm Court free</a></p>
+      <p class="note">Found a mistake, or something the game does differently now? <a href="../contact.html">Tell us</a> and we will fix the guide.</p>
+    </section>
+  </article>
+  <nav class="toc" aria-label="On this page"><b>On this page</b><ol><li><a href="#first-which-kind-of-lag-is-it">First, which kind of lag is it?</a></li><li><a href="#if-the-picture-is-too-slow">If the picture is too slow</a></li><li><a href="#what-each-graphics-preset-changes">What each graphics preset changes</a></li><li><a href="#what-auto-does-and-when-it-changes-its-mind">What Auto does, and when it changes its mind</a></li><li><a href="#when-the-swing-lands-late-not-the-picture">When the swing lands late, not the picture</a></li><li><a href="#sound-problems">Sound problems</a></li><li><a href="#small-things-that-look-like-faults">Small things that look like faults</a></li></ol></nav>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="../"><img src="../site/icon.svg" alt="" width="30" height="30" loading="lazy">Palm Court</a>
+      <p>Motion-controlled tennis in your browser. Swing your phone or your hand, or pick up a controller, and the player on court does the running.</p>
+    </div>
+    <div>
+      <h2>Game</h2>
+      <ul><li><a href="../play/">Play free</a></li><li><a href="../how-to-play.html">How to play</a></li><li><a href="../guides/">Guides</a></li><li><a href="../pros.html">The pros</a></li><li><a href="../news.html">News</a></li><li><a href="../faq.html">FAQ</a></li><li><a data-steam href="https://store.steampowered.com/app/YOUR_APP_ID/Palm_Court/"><span>Wishlist on Steam</span></a></li><li><a class="social" href="https://www.instagram.com/palmcourt.game/" target="_blank" rel="noopener" aria-label="Instagram: @palmcourt.game (opens in a new tab)"><svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li></ul>
+    </div>
+    <div>
+      <h2>Palm Court</h2>
+      <ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../cookies.html">Cookie policy</a></li><li><a href="../credits.html">Credits</a></li></ul>
+    </div>
+    <p class="fine">© <span data-year>2026</span> Palm Court. The players are fictional characters with playful parody names inspired by real-world tennis stars. Palm Court is not affiliated with, sponsored by or endorsed by any real player, tour, tournament or brand, and uses no real person’s name, image or likeness.</p>
+  </div>
+</footer>
+</body>
+</html>
